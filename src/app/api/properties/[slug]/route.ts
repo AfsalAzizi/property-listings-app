@@ -1,15 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getPropertyBySlug } from "@/lib/properties";
 
-type Props = {
-  params: {
-    slug: string;
-  };
-};
-
-export async function GET(request: NextRequest, context: Props) {
+export async function GET(
+  request: NextRequest,
+  { params }: { params: { slug: string } }
+): Promise<NextResponse> {
   try {
-    const property = getPropertyBySlug(context.params.slug);
+    const property = getPropertyBySlug(params.slug);
 
     if (!property) {
       return NextResponse.json(
