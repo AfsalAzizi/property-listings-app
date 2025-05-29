@@ -1,12 +1,15 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getPropertyBySlug } from "@/lib/properties";
 
-export async function GET(
-  request: NextRequest,
-  { params }: { params: { slug: string } }
-): Promise<NextResponse> {
+export async function GET(request: NextRequest) {
   try {
-    const property = getPropertyBySlug(params.slug);
+    const slug = request.url.split("/").pop();
+
+    if (!slug) {
+      return NextResponse.json({ error: "Slug is required" }, { status: 400 });
+    }
+
+    const property = getPropertyBySlug(slug);
 
     if (!property) {
       return NextResponse.json(
