@@ -1,0 +1,139 @@
+{
+  "properties": [
+    {
+      "id": "1",
+      "slug": "burj-vista-penthouse",
+      "title": "Burj Vista Penthouse by Emaar",
+      "description": "Experience luxury living in this stunning penthouse at Burj Vista, offering breathtaking views of the Burj Khalifa and Dubai Fountain. This architectural masterpiece features floor-to-ceiling windows, private elevator access, and a rooftop terrace. The interior showcases the finest materials and finishes, with a gourmet kitchen, spa-like bathrooms, and smart home technology throughout.",
+      "price": 25000000,
+      "location": {
+        "city": "Dubai",
+        "state": "Dubai",
+        "country": "UAE",
+        "address": "Burj Vista, Downtown Dubai"
+      },
+      "rating": 4.9,
+      "thumbnail": "https://luxhabitat.ae/resizedimages/1920w/13674/source/e514ce6a405d7add130a7e3cfc6d40f6e8067628b9b3eb772d5df9961dccbaf0.jpg",
+      "images": {
+        "main": "https://luxhabitat.ae/resizedimages/1920w/13674/source/e514ce6a405d7add130a7e3cfc6d40f6e8067628b9b3eb772d5df9961dccbaf0.jpg",
+        "gallery": [
+          "https://luxhabitat.ae/resizedimages/1920w/13674/source/e514ce6a405d7add130a7e3cfc6d40f6e8067628b9b3eb772d5df9961dccbaf0.jpg",
+          "https://luxhabitat.ae/resizedimages/1920w/13674/source/e514ce6a405d7add130a7e3cfc6d40f6e8067628b9b3eb772d5df9961dccbaf0.jpg",
+          "https://luxhabitat.ae/resizedimages/1920w/13674/source/e514ce6a405d7add130a7e3cfc6d40f6e8067628b9b3eb772d5df9961dccbaf0.jpg"
+        ]
+      },
+      "features": {
+        "bedrooms": 5,
+        "bathrooms": 6,
+        "area": 12000,
+        "parking": 4
+      },
+      "amenities": [
+        "Private Elevator",
+        "Rooftop Terrace",
+        "Smart Home System",
+        "Wine Cellar",
+        "Private Spa",
+        "24/7 Concierge"
+      ],
+      "propertyType": "apartment",
+      "status": "for-sale",
+      "yearBuilt": 2010,
+      "contactInfo": {
+        "agent": "Ahmed Al Mansouri",
+        "phone": "+971 50 123 4567",
+        "email": "ahmed.mansouri@luxuryhomes.ae"
+      }
+    },
+    {
+      "id": "2",
+      "slug": "bulgari-resort-villa",
+      "title": "Bulgari Resort Villa on Jumeirah Bay",
+      "description": "Exclusive beachfront villa at the prestigious Bulgari Resort, offering direct access to pristine beaches and stunning views of the Arabian Gulf. This architectural gem features an infinity pool, private beach access, and spacious outdoor living areas. The interior combines contemporary design with traditional Arabic elements, creating a perfect blend of luxury and comfort.",
+      "price": 35000000,
+      "location": {
+        "city": "Dubai",
+        "state": "Dubai",
+        "country": "UAE",
+        "address": "Bulgari Resort, Jumeirah Bay Island"
+      },
+      "rating": 4.8,
+      "thumbnail": "https://static.zawya.com/view/acePublic/alias/contentid/b755d98b-1cb8-468d-9815-5f1485f53b54/0/print.webp?f=3%3A2&q=0.75&w=3840",
+      "images": {
+        "main": "https://static.zawya.com/view/acePublic/alias/contentid/b755d98b-1cb8-468d-9815-5f1485f53b54/0/print.webp?f=3%3A2&q=0.75&w=3840",
+        "gallery": [
+          "https://static.zawya.com/view/acePublic/alias/contentid/b755d98b-1cb8-468d-9815-5f1485f53b54/0/print.webp?f=3%3A2&q=0.75&w=3840",
+          "https://static.zawya.com/view/acePublic/alias/contentid/b755d98b-1cb8-468d-9815-5f1485f53b54/0/print.webp?f=3%3A2&q=0.75&w=3840",
+          "https://static.zawya.com/view/acePublic/alias/contentid/b755d98b-1cb8-468d-9815-5f1485f53b54/0/print.webp?f=3%3A2&q=0.75&w=3840"
+        ]
+      },
+      "features": {
+        "bedrooms": 6,
+        "bathrooms": 7,
+        "area": 15000,
+        "parking": 6
+      },
+      "amenities": [
+        "Private Beach Access",
+        "Infinity Pool",
+        "Outdoor Kitchen",
+        "Home Theater",
+        "Wine Room",
+        "Smart Security System"
+      ],
+      "propertyType": "villa",
+      "status": "for-sale",
+      "yearBuilt": 2022,
+      "contactInfo": {
+        "agent": "Fatima Al Qasimi",
+        "phone": "+971 50 987 6543",
+        "email": "fatima.qasimi@luxuryhomes.ae"
+      }
+    },
+    {
+      "id": "3",
+      "slug": "one-palm-penthouse",
+      "title": "One Palm Penthouse by Omniyat",
+      "description": "Contemporary penthouse at One Palm, offering the perfect blend of luxury living and urban convenience. This architectural masterpiece features a private garden, state-of-the-art home automation, and panoramic views of the Dubai Marina. The interior showcases the finest Italian marble, custom lighting, and designer furniture throughout.",
+      "price": 45000000,
+      "location": {
+        "city": "Dubai",
+        "state": "Dubai",
+        "country": "UAE",
+        "address": "One Palm, Palm Jumeirah"
+      },
+      "rating": 4.9,
+      "thumbnail": "https://luxhabitat.ae/resizedimages/1920w/13674/source/e514ce6a405d7add130a7e3cfc6d40f6e8067628b9b3eb772d5df9961dccbaf0.jpg",
+      "images": {
+        "main": "https://luxhabitat.ae/resizedimages/1920w/13674/source/e514ce6a405d7add130a7e3cfc6d40f6e8067628b9b3eb772d5df9961dccbaf0.jpg",
+        "gallery": [
+          "https://luxhabitat.ae/resizedimages/1920w/13674/source/e514ce6a405d7add130a7e3cfc6d40f6e8067628b9b3eb772d5df9961dccbaf0.jpg",
+          "https://luxhabitat.ae/resizedimages/1920w/13674/source/e514ce6a405d7add130a7e3cfc6d40f6e8067628b9b3eb772d5df9961dccbaf0.jpg",
+          "https://luxhabitat.ae/resizedimages/1920w/13674/source/e514ce6a405d7add130a7e3cfc6d40f6e8067628b9b3eb772d5df9961dccbaf0.jpg"
+        ]
+      },
+      "features": {
+        "bedrooms": 8,
+        "bathrooms": 9,
+        "area": 20000,
+        "parking": 8
+      },
+      "amenities": [
+        "Private Garden",
+        "Home Automation",
+        "Private Gym",
+        "Art Gallery",
+        "Security System",
+        "Staff Quarters"
+      ],
+      "propertyType": "apartment",
+      "status": "for-sale",
+      "yearBuilt": 2023,
+      "contactInfo": {
+        "agent": "Mohammed Al Hashimi",
+        "phone": "+971 50 456 7890",
+        "email": "mohammed.hashimi@luxuryhomes.ae"
+      }
+    }
+  ]
+}
