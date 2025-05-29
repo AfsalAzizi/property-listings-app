@@ -1,14 +1,12 @@
-import { NextResponse } from "next/server";
-import propertiesData from "@/data/properties.json";
+import { NextRequest, NextResponse } from "next/server";
+import { getPropertyBySlug } from "@/lib/properties";
 
 export async function GET(
-  request: Request,
+  request: NextRequest,
   { params }: { params: { slug: string } }
 ) {
   try {
-    const property = propertiesData.properties.find(
-      (p) => p.slug === params.slug
-    );
+    const property = getPropertyBySlug(params.slug);
 
     if (!property) {
       return NextResponse.json(
@@ -19,9 +17,9 @@ export async function GET(
 
     return NextResponse.json(property);
   } catch (error) {
-    console.error(error);
+    console.error("Error fetching property:", error);
     return NextResponse.json(
-      { error: "Failed to fetch property" },
+      { error: "Internal server error" },
       { status: 500 }
     );
   }
