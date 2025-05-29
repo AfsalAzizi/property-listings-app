@@ -8,6 +8,7 @@ type Props = {
   params: {
     slug: string;
   };
+  searchParams: { [key: string]: string | string[] | undefined };
 };
 
 // Generate static params for all properties at build time
