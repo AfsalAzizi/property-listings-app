@@ -23,13 +23,60 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   if (!property) {
     return {
-      title: "Property Not Found",
+      title: "Property Not Found | LuxeList Dubai",
+      description:
+        "The property you're looking for doesn't exist or has been removed.",
     };
   }
 
+  const formattedPrice = new Intl.NumberFormat("en-AE", {
+    style: "currency",
+    currency: "AED",
+    maximumFractionDigits: 0,
+  }).format(property.price);
+
   return {
-    title: property.title,
+    title: `${property.title} | LuxeList Dubai`,
     description: property.description,
+    keywords: [
+      "Dubai real estate",
+      "luxury properties",
+      property.location.city,
+      property.location.state,
+      property.propertyType,
+      "property for sale",
+      "real estate Dubai",
+    ].join(", "),
+    openGraph: {
+      title: `${property.title} | LuxeList Dubai`,
+      description: property.description,
+      type: "website",
+      images: [
+        {
+          url: property.images.main,
+          width: 1200,
+          height: 630,
+          alt: property.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${property.title} | LuxeList Dubai`,
+      description: property.description,
+      images: [property.images.main],
+    },
+    alternates: {
+      canonical: `https://luxelist.ae/properties/${property.slug}`,
+    },
+    other: {
+      "property:price": formattedPrice,
+      "property:type": property.propertyType,
+      "property:location": `${property.location.city}, ${property.location.state}`,
+      "property:bedrooms": property.features.bedrooms.toString(),
+      "property:bathrooms": property.features.bathrooms.toString(),
+      "property:area": `${property.features.area} sq ft`,
+    },
   };
 }
 

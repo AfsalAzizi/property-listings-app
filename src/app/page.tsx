@@ -5,59 +5,7 @@ import PropertyCard from "@/components/PropertyCard";
 import LocationFilter from "@/components/LocationFilter";
 import PriceRangeFilter from "@/components/PriceRangeFilter";
 import { PropertySummary } from "@/models/property";
-
-interface PropertyData {
-  id: string;
-  slug: string;
-  title: string;
-  price: number;
-  location: {
-    city: string;
-    state: string;
-  };
-  rating: number;
-  thumbnail: string;
-  description: string;
-}
-
-async function getProperties(
-  destinationId: string | null,
-  minPrice: number | null,
-  maxPrice: number | null
-): Promise<PropertySummary[]> {
-  const baseUrl = process.env.VERCEL_URL
-    ? `https://${process.env.VERCEL_URL}`
-    : "http://localhost:3000";
-
-  const params = new URLSearchParams();
-  if (destinationId) params.append("destination_id", destinationId);
-  if (minPrice) params.append("min_price", minPrice.toString());
-  if (maxPrice) params.append("max_price", maxPrice.toString());
-
-  const res = await fetch(`${baseUrl}/api/properties?${params.toString()}`, {
-    cache: "no-store",
-  });
-
-  if (!res.ok) {
-    throw new Error("Failed to fetch properties");
-  }
-
-  const properties = (await res.json()) as PropertyData[];
-
-  return properties.map((property) => ({
-    id: property.id,
-    slug: property.slug,
-    title: property.title,
-    price: property.price,
-    location: {
-      city: property.location.city,
-      state: property.location.state,
-    },
-    rating: property.rating,
-    thumbnail: property.thumbnail,
-    shortDescription: property.description.split(".")[0] + ".",
-  }));
-}
+import { getAllProperties } from "@/lib/properties";
 
 export default function Home() {
   const [properties, setProperties] = useState<PropertySummary[]>([]);
@@ -70,8 +18,30 @@ export default function Home() {
     const fetchProperties = async () => {
       setLoading(true);
       try {
-        const data = await getProperties(destinationId, minPrice, maxPrice);
-        setProperties(data);
+        const allProperties = getAllProperties();
+        // Filter properties based on criteria
+        const filteredProperties = allProperties
+          .filter((property) => {
+            if (destinationId && property.location.city !== destinationId)
+              return false;
+            if (minPrice && property.price < minPrice) return false;
+            if (maxPrice && property.price > maxPrice) return false;
+            return true;
+          })
+          .map((property) => ({
+            id: property.id,
+            slug: property.slug,
+            title: property.title,
+            price: property.price,
+            location: {
+              city: property.location.city,
+              state: property.location.state,
+            },
+            rating: property.rating,
+            thumbnail: property.thumbnail,
+            shortDescription: property.description.split(".")[0] + ".",
+          }));
+        setProperties(filteredProperties);
       } catch (error) {
         console.error("Error fetching properties:", error);
       }
@@ -83,7 +53,7 @@ export default function Home() {
 
   return (
     <main className="container mx-auto px-4 py-8">
-      <h1 className="text-4xl font-bold mb-8">Featured Properties</h1>
+      <h1 className="text-4xl font-bold mb-8">LuxeList Dubai</h1>
 
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
         <div className="lg:col-span-1 space-y-4">
