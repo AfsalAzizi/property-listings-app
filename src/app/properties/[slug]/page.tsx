@@ -4,12 +4,12 @@ import Image from "next/image";
 import { Property } from "@/models/property";
 import { getAllProperties } from "@/lib/properties";
 
-type Props = {
+interface PageProps {
   params: {
     slug: string;
   };
   searchParams: { [key: string]: string | string[] | undefined };
-};
+}
 
 // Generate static params for all properties at build time
 export async function generateStaticParams() {
@@ -19,7 +19,9 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
   const property = await getProperty(params.slug);
 
   if (!property) {
@@ -107,7 +109,7 @@ async function getProperty(slug: string): Promise<Property | null> {
   }
 }
 
-export default async function PropertyPage({ params }: Props) {
+export default async function PropertyPage({ params }: PageProps) {
   const property = await getProperty(params.slug);
 
   if (!property) {
